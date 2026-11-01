@@ -1,0 +1,58 @@
+@use '../../styles/variables' as *;
+
+.button {
+  font-family: $font-main;
+  font-weight: $font-weight-medium;
+  border: none;
+  border-radius: $radius-md;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+
+  &--primary {
+    background: $color-brand-yellow;
+    color: $color-text-button;
+    font-weight: $font-weight-semibold;
+    font-size:$font-size-16;
+    border-radius: 5px;
+    width: 206px;
+    height: 50px;
+    padding: 13px 54.5px;
+  }
+
+  &--buy {
+    background: $color-bg-button-buy;
+    color: $color-text-on-primary;
+    font-weight: $font-weight-bold;
+    font-size:$font-size-14;
+    border-radius: $radius-xs;
+    height: 44px;
+    padding: 14.08px 72.97px 11.44px 74.75px;
+  }
+
+  &--ghost {
+    background: transparent;
+    color: $color-primary;
+  }
+
+  &--sm {
+    padding: $space-1 $space-2;
+    font-size: $font-size-14;
+  }
+
+  &--md {
+    padding: $space-2 $space-4;
+    font-size: $font-size-16;
+  }
+
+  &--lg {
+    padding: $space-3 $space-5;
+    font-size: $font-size-18;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+}
