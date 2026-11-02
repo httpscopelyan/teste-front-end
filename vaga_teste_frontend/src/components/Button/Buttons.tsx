@@ -3,7 +3,7 @@ import "./button.scss"
 
 interface ButtonProps {
     children: ReactNode;
-    variant?: "seebutton" | "buy" | "checkbutton" | "subscribe";
+    variant?: "seebutton" | "buy" | "checkbutton" | "subscribe" | "modal";
     fullWidth?: boolean;
     type?: "button" | "submit";
     onClick?: () => void;

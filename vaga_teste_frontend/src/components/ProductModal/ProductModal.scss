@@ -1,0 +1,151 @@
+@use "../../styles/variables" as *;
+
+.product-modal {
+  width: 769px;
+  max-width: calc(100% - #{$space-12});
+  padding: 0;
+  border: none;
+  border-radius: $radius-sm;
+  background-color: $color-white;
+
+  &::backdrop {
+    background-color: $color-bg-overlay;
+  }
+
+  &[open] {
+    display: block;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 87px;
+    padding: 63px 51px 38px 56px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 11.5px;
+    right: 23.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $space-9;
+    height: $space-9;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    width: 247px;
+    height: 192.2px;
+    margin-top: -6.5px;
+    object-fit: contain;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: $space-12;
+    width: 328px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $space-7;
+    color: $color-text-subtitle;
+    font-family: $font-main;
+    font-size: $font-size-20;
+    letter-spacing: 1px;
+    line-height: 17px;
+  }
+
+  &__title {
+    font-weight: $font-weight-regular;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    font-weight: $font-weight-semibold;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: $font-links;
+  }
+
+  &__description {
+    width: 290px;
+    min-height: 2lh;
+    color: $color-text-muted;
+    font-size: $font-size-10;
+    font-weight: $font-weight-medium;
+    letter-spacing: 0.5px;
+    line-height: 15.05px;
+  }
+
+  &__link {
+    color: $color-text-title;
+    font-size: $font-size-11;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.55px;
+    line-height: 11px;
+    text-decoration: none;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-4;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 110px;
+    height: 36px;
+    padding: 0 9px;
+    border: 1px solid $color-border-quantity;
+    border-radius: $radius-xs;
+    background-color: $color-white;
+    color: $color-text-button;
+    font-family: $font-main;
+    font-size: $font-size-16;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-16;
+  }
+
+  &__step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $space-8;
+    height: $space-8;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .product-modal__content {
+    flex-direction: column;
+    align-items: center;
+    gap: $space-9;
+    padding: $space-16 $space-9 $space-12;
+  }
+
+  .product-modal__image {
+    margin-top: 0;
+  }
+
+  .product-modal__info {
+    width: 100%;
+  }
+}

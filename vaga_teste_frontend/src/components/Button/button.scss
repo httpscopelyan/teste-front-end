@@ -55,6 +55,19 @@
     padding: 15px $space-13;
   }
 
+  &--modal {
+    background: $color-brand-yellow;
+    color: $color-text-button;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-14;
+    line-height: $line-height-150;
+    text-transform: uppercase;
+    width: 188px;
+    height: 36px;
+    padding: 11px 65px;
+    border-radius: $radius-sm;
+  }
+
   &--full-width {
     width: 100%;
   }
