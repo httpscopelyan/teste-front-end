@@ -1,4 +1,5 @@
 import { useId } from "react"
+import { Buttons } from ".."
 import "./Newsletter.scss"
 
 interface NewsletterProps {
@@ -41,7 +42,7 @@ export function Newsletter({ onSubscribe }: NewsletterProps) {
                             aria-label="E-mail"
                             required
                         />
-                        <button className="newsletter__button" type="submit">Inscrever</button>
+                        <Buttons variant="subscribe" type="submit">Inscrever</Buttons>
                     </div>
                     <label className="newsletter__terms">
                         <input className="newsletter__checkbox" type="checkbox" name="terms" required />
