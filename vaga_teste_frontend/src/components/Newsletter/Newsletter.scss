@@ -1,0 +1,140 @@
+@use "../../styles/variables" as *;
+
+.newsletter {
+  background-color: $color-bg-newsletter;
+  margin: 90px auto 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1280px;
+    height: 162px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    width: 515px;
+  }
+
+  &__title {
+    color: $color-white;
+    font-family: $font-title;
+    font-size: $font-size-32;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-120;
+  }
+
+  &__text {
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-14;
+    font-weight: $font-weight-light;
+    line-height: $line-height-18;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: $space-2;
+    width: 639px;
+  }
+
+  &__fields {
+    display: flex;
+    gap: $space-2;
+  }
+
+  &__input {
+    width: 233px;
+    height: 42px;
+    padding: 0 $space-9;
+    border: 1px solid $color-border-input;
+    border-radius: $radius-md;
+    background-color: $color-white;
+    color: $color-text-subtitle;
+    font-family: $font-main;
+    font-size: $font-size-14;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-18;
+
+    &::placeholder {
+      color: $color-text-placeholder;
+    }
+  }
+
+  &__button {
+    width: 157px;
+    height: 42px;
+    padding: 15px $space-13;
+    border: none;
+    border-radius: $radius-md;
+    background-color: $color-brand-yellow;
+    color: $color-text-input-button;
+    font-family: $font-main;
+    font-size: $font-size-14;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-12;
+    text-transform: uppercase;
+  }
+
+  &__terms {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-14;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-150;
+  }
+
+  &__checkbox {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-border-checkbox;
+    border-radius: 1px;
+    background-color: $color-bg-checkbox;
+
+    &:checked {
+      background-color: $color-border-checkbox;
+    }
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .newsletter__container {
+    padding: 0 $space-6;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .newsletter {
+    &__container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $space-9;
+      height: auto;
+      padding: $space-13 $space-6;
+    }
+
+    &__header,
+    &__form {
+      width: 100%;
+    }
+
+    &__fields {
+      flex-direction: column;
+    }
+
+    &__input,
+    &__button {
+      width: 100%;
+    }
+  }
+}
