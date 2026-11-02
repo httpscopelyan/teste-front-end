@@ -1,5 +1,5 @@
-import { Buttons } from ".."
-import "./banner.scss"
+import { Button } from ".."
+import "./BannerCard.scss"
 
 interface BannerCardProps {
     title: string;
@@ -16,7 +16,7 @@ export function BannerCard({ title, description, image, buttonLabel = "Confira" 
             <div className="banner-card__content">
                 <h2 className="banner-card__title">{title}</h2>
                 <p className="banner-card__description">{description}</p>
-                <Buttons variant="checkbutton">{buttonLabel}</Buttons>
+                <Button variant="checkbutton">{buttonLabel}</Button>
             </div>
         </article>
     )

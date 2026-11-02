@@ -1,4 +1,4 @@
-import "./category.scss"
+import "./CategoryCard.scss"
 
 interface CategoryCardProps {
     icon: string;

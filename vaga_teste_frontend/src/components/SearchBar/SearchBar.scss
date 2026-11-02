@@ -1,6 +1,6 @@
 @use "../../styles/variables" as *;
 
-.header__search {
+.search-bar {
   display: flex;
   align-items: center;
   flex: 0 1 630px;
@@ -12,7 +12,7 @@
   background: $color-bg-search;
 }
 
-.header__search-input {
+.search-bar__input {
   flex: 1;
   min-width: 0;
   border: none;
@@ -30,13 +30,13 @@
 }
 
 @media (max-width: #{$breakpoint-desktop - 1px}) {
-  .header__search {
+  .search-bar {
     margin-left: $space-12;
   }
 }
 
 @media (max-width: #{$breakpoint-mobile}) {
-  .header__search {
+  .search-bar {
     order: 3;
     flex-basis: 100%;
     margin-left: 0;

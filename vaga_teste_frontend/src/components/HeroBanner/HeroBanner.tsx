@@ -1,5 +1,5 @@
 import backgroundImage from "../../assets/secions/background_1.webp"
-import { Buttons } from ".."
+import { Button } from ".."
 import "./HeroBanner.scss"
 
 export function HeroBanner() {
@@ -11,7 +11,7 @@ export function HeroBanner() {
                 <h1 className="hero-banner__title">Venha conhecer nossas promoções</h1>
                 <p className="hero-banner__subtitle"><span>50% Off</span> nos produtos</p>
                 <div className="hero-banner__action">
-                    <Buttons variant="seebutton">Ver produto</Buttons>
+                    <Button variant="seebutton">Ver produto</Button>
                 </div>
             </div>
         </section>

@@ -1,4 +1,4 @@
-import { Buttons } from ".."
+import { Button } from ".."
 import type { Product } from "../../types/product"
 import { formatPrice } from "../../utils/formatPrice"
 import "./ProductCard.scss"
@@ -18,7 +18,7 @@ export function ProductCard({ productName, descriptionShort, photo, price, onBuy
                 <p className="product-card__installments">ou 2x de R$ 49,95 sem juros</p>
                 <p className="product-card__shipping">Frete grátis</p>
                 <div className="product-card__action">
-                    <Buttons variant="buy" fullWidth onClick={onBuy}>Comprar</Buttons>
+                    <Button variant="buy" fullWidth onClick={onBuy}>Comprar</Button>
                 </div>
             </div>
         </article>

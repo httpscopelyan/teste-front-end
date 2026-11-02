@@ -8,9 +8,9 @@ interface SearchBarProps {
 
 export function SearchBar({ placeholder = "O que você está buscando?" }: SearchBarProps) {
     return (
-        <form className="header__search" role="search">
+        <form className="search-bar" role="search">
             <input
-                className="header__search-input"
+                className="search-bar__input"
                 type="search"
                 name="query"
                 placeholder={placeholder}

@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef } from "react"
-import { Buttons } from ".."
+import { Button } from ".."
 import closeIcon from "../../assets/icons/Close.svg"
 import minusIcon from "../../assets/icons/Minus.svg"
 import plusIcon from "../../assets/icons/Plus.svg"
@@ -52,7 +52,7 @@ export function ProductModal({ product, onClose }: ProductModalProps) {
                                 <img src={plusIcon} alt="" width={12} height={12} />
                             </button>
                         </div>
-                        <Buttons variant="modal">Comprar</Buttons>
+                        <Button variant="modal">Comprar</Button>
                     </div>
                 </div>
             </div>

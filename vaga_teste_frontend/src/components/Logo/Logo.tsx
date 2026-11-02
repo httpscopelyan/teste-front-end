@@ -7,8 +7,8 @@ interface LogoProps {
 
 export function Logo({ href = "/" }: LogoProps) {
     return (
-        <a className="header__logo" href={href}>
-            <img className="header__logo-image" src={logoImage} alt="Econverse" />
+        <a className="logo" href={href}>
+            <img className="logo__image" src={logoImage} alt="Econverse" />
         </a>
     )
 }

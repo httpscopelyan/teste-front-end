@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { BannerSupport, BrandButton, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase, type Product } from "../../components"
+import { BannerSupport, Brands, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase, type Product } from "../../components"
 import { productTags } from "../../mocks/products"
 import { getProducts } from "../../service/products"
 
@@ -20,7 +20,7 @@ export function Home() {
                 <BannerSupport />
                 <ProductShowcase products={products} />
                 <BannerSupport />
-                <BrandButton />
+                <Brands />
                 <ProductShowcase products={products} />
                 <Newsletter />
             </main>

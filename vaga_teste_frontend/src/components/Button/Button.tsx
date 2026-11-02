@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import "./button.scss"
+import "./Button.scss"
 
 interface ButtonProps {
     children: ReactNode;
@@ -9,7 +9,7 @@ interface ButtonProps {
     onClick?: () => void;
 }
 
-export function Buttons({ children, variant = "seebutton", fullWidth = false, type = "button", onClick }: ButtonProps) {
+export function Button({ children, variant = "seebutton", fullWidth = false, type = "button", onClick }: ButtonProps) {
     const classes = ["button", `button--${variant}`, fullWidth && "button--full-width"]
         .filter(Boolean)
         .join(" ")

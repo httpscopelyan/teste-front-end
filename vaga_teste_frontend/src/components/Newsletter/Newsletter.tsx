@@ -1,5 +1,5 @@
 import { useId } from "react"
-import { Buttons } from ".."
+import { Button } from ".."
 import "./Newsletter.scss"
 
 export function Newsletter() {
@@ -32,7 +32,7 @@ export function Newsletter() {
                             aria-label="E-mail"
                             required
                         />
-                        <Buttons variant="subscribe" type="submit">Inscrever</Buttons>
+                        <Button variant="subscribe" type="submit">Inscrever</Button>
                     </div>
                     <label className="newsletter__terms">
                         <input className="newsletter__checkbox" type="checkbox" name="terms" required />

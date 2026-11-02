@@ -1,11 +1,11 @@
 import { useId } from "react"
 import { SectionTitle } from ".."
 import logo from "../../assets/logotipos/Logo.png"
-import "./brands.scss"
+import "./Brands.scss"
 
 const brands = ["Marca 1", "Marca 2", "Marca 3", "Marca 4", "Marca 5"]
 
-export function BrandButton() {
+export function Brands() {
     const titleId = useId()
 
     return (
