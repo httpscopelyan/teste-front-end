@@ -1,43 +1,35 @@
+$color-white: #FFFFFF;
 $color-primary: #3019B2;
 $color-brand-yellow: #F7CA11;
+$color-brand-blue: #3442B5;
+$color-brand-dark: #271C47;
 
-$color-white: #FFFFFF;
-$color-bg-white: #FFFFFF;
-
-$color-text-on-primary: #FFFFFF;
-$color-text-button: #271C47;
-$color-text-title: #3442B5;
+$color-text-on-primary: $color-white;
+$color-text-button: $color-brand-dark;
+$color-text-title: $color-brand-blue;
 $color-text-subtitle: #3F3F40;
 $color-text-muted: #9F9F9F;
 $color-text-discount: #808080;
 $color-text-related-product: #3B3B3B;
-
-$color-border-section: #DEDEDE;
-$color-border-product-card: #B1B1B1;
-$color-border-related-product: #BDBDBD;
-
-$color-bg-category: #F4F4F4;
-$color-bg-page: #FFFFFF;
-$color-bg-search: #F6F5F2;
-$color-categoryselected: #4E4E4E;
-$color-bg-button-buy: #3442B5;
-
-
-$color-border-section: #DEDEDE;
-$color-border-divider: #F0F0F0;
-$color-border-product-card: #B1B1B1;
-$color-border-related-product: #BDBDBD;
-$color-border-header: #F0F0F0;
-
-$color-bg-newsletter: #271C47;
-$color-bg-footer: #F4F4F4;
-$color-bg-checkbox: #F6F6F6;
-$color-border-input: #E7E7E7;
-$color-border-checkbox: #8C342B;
-$color-border-footer-divider: rgba(40, 40, 40, 0.18);
 $color-text-footer: #222222;
 $color-text-input-button: #161615;
 $color-text-placeholder: #676767;
 
+$color-bg-white: $color-white;
+$color-bg-page: $color-white;
+$color-bg-category: #F4F4F4;
+$color-bg-footer: $color-bg-category;
+$color-bg-search: #F6F5F2;
+$color-bg-button-buy: $color-brand-blue;
+$color-bg-newsletter: $color-brand-dark;
+$color-bg-checkbox: #F6F6F6;
 $color-bg-overlay: rgba(0, 0, 0, 0.54);
+$color-categoryselected: #4E4E4E;
+
+$color-border-section: #DEDEDE;
+$color-border-related-product: #BDBDBD;
+$color-border-header: #F0F0F0;
+$color-border-input: #E7E7E7;
+$color-border-checkbox: #8C342B;
 $color-border-quantity: #D9D9D9;
+$color-border-footer-divider: rgba(40, 40, 40, 0.18);

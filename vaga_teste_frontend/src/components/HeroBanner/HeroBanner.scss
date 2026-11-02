@@ -28,7 +28,7 @@
   &__content {
     position: relative;
     width: 100%;
-    max-width: 1280px;
+    max-width: $container-width;
     margin: 0 auto;
     padding: 78px 0 55px;
   }

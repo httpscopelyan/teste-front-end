@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { BannerSupport, Brands, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase, type Product } from "../../components"
-import { productTags } from "../../mocks/products"
 import { getProducts } from "../../service/products"
+
+const productTags = ["CELULAR", "ACESSÓRIOS", "TABLETS", "NOTEBOOKS", "TVS"]
 
 export function Home() {
     const [products, setProducts] = useState<Product[]>([])

@@ -2,14 +2,14 @@
 
 .newsletter {
   background-color: $color-bg-newsletter;
-  margin: 90px auto 0;
+  margin: $space-19 auto 0;
 
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1280px;
+    max-width: $container-width;
     height: 162px;
     margin: 0 auto;
   }

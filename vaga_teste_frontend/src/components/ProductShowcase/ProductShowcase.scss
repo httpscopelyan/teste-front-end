@@ -6,7 +6,7 @@ $scale-step: 60px;
 
 .product-showcase {
   width: 100%;
-  margin-top: 90px;
+  margin-top: $space-19;
   overflow-x: clip;
 
   &__header {
