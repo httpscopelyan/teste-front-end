@@ -1,4 +1,4 @@
-import { CategoryCard } from "../CategoryCard"
+import { CategoryCard } from "../.."
 import techIcon from "../../../assets/icons/category_icons/tech.webp"
 import supermarketIcon from "../../../assets/icons/category_icons/supermercados 1.webp"
 import drinkIcon from "../../../assets/icons/category_icons/bebidas.webp"

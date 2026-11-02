@@ -1,5 +1,5 @@
 import backgroundImage from "../../assets/secions/background_1.webp"
-import Buttons from "../Button/Buttons"
+import { Buttons } from ".."
 import "./HeroBanner.scss"
 
 export function HeroBanner() {

@@ -1,4 +1,4 @@
-import Buttons from "../Button/Buttons"
+import { Buttons } from ".."
 import "./banner.scss"
 
 interface BannerCardProps {

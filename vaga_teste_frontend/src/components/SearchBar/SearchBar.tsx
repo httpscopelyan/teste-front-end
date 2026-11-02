@@ -1,4 +1,4 @@
-import { IconButton } from "../IconButton/IconButton"
+import { IconButton } from ".."
 import searchIcon from "../../assets/icons/MagnifyingGlass.svg"
 import "./SearchBar.scss"
 

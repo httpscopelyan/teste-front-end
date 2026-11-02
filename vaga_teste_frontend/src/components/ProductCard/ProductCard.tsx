@@ -1,4 +1,4 @@
-import Buttons from "../Button/Buttons"
+import { Buttons } from ".."
 import "./ProductCard.scss"
 
 export interface Product {

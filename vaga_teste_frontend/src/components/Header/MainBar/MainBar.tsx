@@ -1,6 +1,4 @@
-import { Logo } from "../../Logo/Logo"
-import { SearchBar } from "../../SearchBar/SearchBar"
-import { IconButton } from "../../IconButton/IconButton"
+import { IconButton, Logo, SearchBar } from "../.."
 import ordersIcon from "../../../assets/icons/Group.svg"
 import heartIcon from "../../../assets/icons/Heart.svg"
 import userIcon from "../../../assets/icons/UserCircle.svg"

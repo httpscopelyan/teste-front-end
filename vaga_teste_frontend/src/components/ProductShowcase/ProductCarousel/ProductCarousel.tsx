@@ -5,18 +5,16 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/a11y"
 import "swiper/css/effect-fade"
-import { ProductCard, type Product } from "../../ProductCard/ProductCard"
-import { CarouselArrow } from "../CarouselArrow/CarouselArrow"
+import { CarouselArrow, ProductCard, type Product } from "../.."
 import "./ProductCarousel.scss"
 
 interface ProductCarouselProps {
     products: Product[];
 }
 
-const CARDS_PER_PAGE = 4
 const desktop = window.matchMedia("(min-width: 960px)")
 
-const getCardsPerPage = () => (desktop.matches ? CARDS_PER_PAGE : 1)
+const getCardsPerPage = () => (desktop.matches ? 4 : 1)
 
 const subscribe = (onChange: () => void) => {
     desktop.addEventListener("change", onChange)

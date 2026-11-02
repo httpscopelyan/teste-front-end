@@ -1,6 +1,4 @@
-import { AnnouncementBar } from "./AnnouncementBar/AnnouncementBar"
-import { MainBar } from "./MainBar/MainBar"
-import { Navbar } from "./Navbar/Navbar"
+import { AnnouncementBar, MainBar, Navbar } from ".."
 import "./Header.scss"
 
 export function Header() {
