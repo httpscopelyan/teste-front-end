@@ -1,0 +1,30 @@
+@use "../../styles/variables" as *;
+
+.banner-support {
+  width: 100%;
+  max-width: 1281px;
+  margin: 90px auto 0;
+
+  &__items {
+    display: flex;
+    gap: $space-5;
+    list-style: none;
+  }
+
+  &__item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .banner-support {
+    padding: 0 $space-6;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .banner-support__items {
+    flex-direction: column;
+  }
+}

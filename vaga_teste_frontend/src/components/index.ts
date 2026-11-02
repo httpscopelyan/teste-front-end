@@ -1,5 +1,6 @@
 export { AnnouncementBar } from "./Header/AnnouncementBar/AnnouncementBar"
 export { BannerCard } from "./BannerCard/Banner"
+export { BannerSupport } from "./BannerSupport/BannerSupport"
 export { Buttons } from "./Button/Buttons"
 export { CarouselArrow } from "./ProductShowcase/CarouselArrow/CarouselArrow"
 export { CategoryCard } from "./CategoryCard/CategoryCard"
