@@ -1,0 +1,52 @@
+@use "../../../styles/variables" as *;
+
+.header__nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  overflow-x: auto;
+  background: $color-bg-white;
+  box-shadow: $shadow-4;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 91px;
+  margin: 0 auto;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.header__nav-link {
+  display: flex;
+  align-items: center;
+  color: $color-text-muted;
+  font-family: $font-main;
+  font-size: $font-size-12;
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-18;
+  text-decoration: none;
+
+  &--active {
+    color: $color-primary;
+  }
+
+  &--subscription {
+    gap: $space-4;
+  }
+}
+
+.header__nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .header__nav-list {
+    gap: $space-12;
+    padding: 0 $space-6;
+  }
+}

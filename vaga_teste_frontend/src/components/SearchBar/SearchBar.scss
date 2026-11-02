@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+
+.header__search {
+  display: flex;
+  align-items: center;
+  flex: 0 1 630px;
+  min-width: 0;
+  height: 48px;
+  margin-left: 186px;
+  padding: 0 $space-9 0 $space-6;
+  border-radius: $radius-lg;
+  background: $color-bg-search;
+}
+
+.header__search-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: $color-text-subtitle;
+  font-family: $font-main;
+  font-size: $font-size-14;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-150;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .header__search {
+    margin-left: $space-12;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .header__search {
+    order: 3;
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+}

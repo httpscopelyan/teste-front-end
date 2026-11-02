@@ -1,0 +1,34 @@
+@use "../../../styles/variables" as *;
+
+.header__main-bar {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  border-bottom: 1px solid $color-border-header;
+}
+
+.header__icons {
+  display: flex;
+  align-items: flex-start;
+  gap: $space-12;
+  margin-left: auto;
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .header__main-bar {
+    padding: 0 $space-6;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .header__main-bar {
+    flex-wrap: wrap;
+    gap: $space-4 $space-6;
+    height: auto;
+    padding: $space-4 $space-6;
+  }
+
+  .header__icons {
+    gap: $space-6;
+  }
+}

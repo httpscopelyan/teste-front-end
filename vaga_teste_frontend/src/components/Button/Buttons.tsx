@@ -3,12 +3,12 @@ import './button.scss'
 
 interface ButtonProps {
     children: React.ReactNode;
-    variant?: 'primary' | 'buy' | 'ghost';
+    variant?: 'seebutton' | 'buy' | 'checkbutton';
     fullWidth?: boolean;
     onClick?: () => void;
 }
 
-const Buttons = ( { children, variant = 'primary', fullWidth = false, onClick }: ButtonProps) => {
+const Buttons = ( { children, variant = 'seebutton', fullWidth = false, onClick }: ButtonProps) => {
 
     const classes = [
         'button',

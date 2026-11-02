@@ -1,0 +1,48 @@
+@use "../../../styles/variables" as *;
+
+.header__announcement-bar {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  overflow-x: auto;
+  border-bottom: 1px solid $color-border-header;
+}
+
+.header__announcement-list {
+  display: flex;
+  align-items: center;
+  gap: 119px;
+  margin: 0 auto;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.header__announcement-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.header__announcement-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.header__announcement-text {
+  color: $color-text-muted;
+  font-size: $font-size-12;
+  font-weight: $font-weight-medium;
+  line-height: $line-height-18;
+}
+
+.header__announcement-marked {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .header__announcement-list {
+    gap: $space-12;
+    padding: 0 $space-6;
+  }
+}
