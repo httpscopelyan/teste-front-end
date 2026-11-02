@@ -95,7 +95,7 @@ Tipo em `src/types/product.ts`, no formato devolvido pela API.
 
 `https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json`
 
-O servidor não envia o cabeçalho de CORS, então o front chama `/api/...` e o Vite repassa a requisição. O motivo e as consequências estão em [ADR-001](docs/adr/ADR-001-proxy-da-api.md).
+O servidor não envia o cabeçalho de CORS, então o front chama `/api/...` e o Vite repassa a requisição. O proxy funciona em `npm run dev` e `npm run preview`. Em uma hospedagem estática é preciso configurar um redirecionamento equivalente no servidor.
 
 ## Configuration
 
@@ -122,8 +122,6 @@ src/
 ├── types/        tipos compartilhados
 └── utils/        funções utilitárias
 ```
-
-Decisões de arquitetura: [docs/adr](docs/adr).
 
 ## Contributing
 
