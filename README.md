@@ -1,31 +1,137 @@
-# Teste Econverse: Vaga Desenvolvedor Front-End
+# Teste Econverse - Vaga Desenvolvedor Front-End
 
-### Vem ser #Econverse!
+Página Home de e-commerce desenvolvida em React e TypeScript conforme o layout do Figma. A vitrine de produtos consome a API da Econverse e cada produto abre um modal com as suas informações.
 
-Segue abaixo as instruções para a execução do teste.
+## Quick Start
 
-## Instruções
-- Faça um fork desse projeto para a sua conta pessoal do GitHub.
-- Desenvolva a página conforme as **Especificações Técnicas** 
-- Crie um README com as instruções para compilar, testar e rodar o projeto.
-- O link do repositório deverá ser enviado para o e-mail gustavo.cipriano@econverse.com.br com o título **Teste Vaga FrontEnd**
+```bash
+cd vaga_teste_frontend
+npm install
+npm run dev
+```
 
-## Especificações Técnicas
-- Desenvolver a pagina em React e TypeScript conforme o [layout](https://www.figma.com/file/rWnzPeoxgynuNPsJjV0VmV/Teste-Front-End-Jr?node-id=0%3A1). Para conseguir pegar os elementos do Figma, basta copiar o layout para sua conta que terá acesso de edição.
-- Montar a [vitrine](https://app.econverse.com.br/teste-front-end/junior/tecnologia/layout/vitrine-produtos.png) de produtos consumindo as informações dos produtos em json atraves desse [Link](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json).
-- Desenvolver a interação ao clicar em um produto conforme layout. A interação consiste em abrir um modal com as principais informações do produto presente no arquivo [JSON](https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json) conforme o produto que clicar.
-- Utilizar Pré-processador Sass, Less ou Stylus.
-- Respeitar o Layout pixel a pixel, tamanho das fontes, cores e botões.
-- Não Utilizar bibliotecas UI como Bootstrap, Foundation, ou afins.
+A aplicação abre em `http://localhost:5173`.
 
-## Pontos Extras
-- Utilizar Boas práticas de SEO
-- Uso de HTML semântico
+## Installation
 
-## O que avaliaremos em seu teste
-- Organização do projeto
-- Lógica do código
-- Componentização
-- Alcance dos objetivos propostos
+Pré-requisito: Node.js 20.19 ou superior. Todos os comandos abaixo rodam dentro da pasta `vaga_teste_frontend`.
 
-**Boa sorte! ;)**
+| Comando | O que faz |
+|---|---|
+| `npm install` | Instala as dependências |
+| `npm run dev` | Servidor de desenvolvimento com proxy da API |
+| `npm run build` | Verifica os tipos (`tsc`) e gera a build em `dist/` |
+| `npm run preview` | Serve a build gerada, também com o proxy da API |
+| `npm run lint` | Executa o ESLint |
+
+Para validar o projeto antes de entregar, rode `npm run lint` e `npm run build`.
+
+## Usage
+
+Todos os componentes são exportados por `src/components/index.ts`. A página `Home` mostra o uso completo:
+
+```tsx
+import { BannerSupport, Brands, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase } from "../../components"
+
+export function Home() {
+    return (
+        <>
+            <Header />
+            <main>
+                <HeroBanner />
+                <CategoryList />
+                <ProductShowcase products={products} tags={["CELULAR", "TABLETS"]} />
+                <BannerSupport />
+                <Brands />
+                <Newsletter />
+            </main>
+            <Footer />
+        </>
+    )
+}
+```
+
+A referência de cada componente, com props e exemplos, está em [docs/components.md](vaga_teste_frontend/docs/components.md).
+
+## API Reference
+
+### `getProducts(signal?: AbortSignal): Promise<Product[]>`
+
+Busca a lista de produtos em `src/service/products.ts`.
+
+**Parameters:**
+- `signal` - opcional, permite cancelar a requisição (usado pela `Home` ao desmontar)
+
+**Returns:** lista de `Product` já validada. Itens sem `productName`, `descriptionShort`, `photo` ou `price` numérico são descartados.
+
+**Throws:** `Error` quando a resposta não é `ok` ou quando `products` não é uma lista.
+
+**Example:**
+```typescript
+const controller = new AbortController()
+const products = await getProducts(controller.signal)
+```
+
+### `formatPrice(value: number): string`
+
+Formata um número em reais, em `src/utils/formatPrice.ts`.
+
+**Example:**
+```typescript
+formatPrice(1499.9) // "R$ 1.499,90"
+```
+
+### `Product`
+
+Tipo em `src/types/product.ts`, no formato devolvido pela API.
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `productName` | `string` | Nome do produto |
+| `descriptionShort` | `string` | Descrição curta |
+| `photo` | `string` | URL da foto |
+| `price` | `number` | Preço em reais |
+
+### Endpoint
+
+`https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json`
+
+O servidor não envia o cabeçalho de CORS, então o front chama `/api/...` e o Vite repassa a requisição. O proxy funciona em `npm run dev` e `npm run preview`. Em uma hospedagem estática é preciso configurar um redirecionamento equivalente no servidor.
+
+## Configuration
+
+| Opção | Onde | Valor | Descrição |
+|---|---|---|---|
+| Proxy `/api` | `vite.config.ts` | `https://app.econverse.com.br` | Destino das chamadas à API, em `dev` e `preview` |
+| Cards por página | `ProductCarousel.tsx` | 4 a partir de 960px, 1 abaixo | Quantidade de produtos por vez no carrossel |
+| Escala da vitrine | `ProductShowcase.scss` | degraus de 60px entre 1395px e 960px | Reduz o conjunto sem perder os 4 cards |
+| Largura do conteúdo | `styles/_spacing.scss` | `$container-width: 1280px` | Largura máxima dos blocos |
+| Espaço entre blocos | `styles/_spacing.scss` | `$space-19: 90px` | Margem entre as seções da Home |
+
+As cores, fontes, espaçamentos, raios e sombras ficam em `src/styles`.
+
+## Estrutura
+
+O código fica em `vaga_teste_frontend/src`:
+
+```
+src/
+├── app/          ponto de entrada da aplicação
+├── assets/       ícones, logotipos e imagens
+├── components/   componentes, exportados em components/index.ts
+├── pages/        páginas (Home)
+├── service/      chamadas à API
+├── styles/       variáveis Sass
+├── types/        tipos compartilhados
+└── utils/        funções utilitárias
+```
+
+## Contributing
+
+- Um componente por pasta, com o `.tsx` e o `.scss` de mesmo nome (`ProductCard/ProductCard.tsx` e `ProductCard.scss`).
+- Componentes com `export function Nome` e registrados em `components/index.ts`. Imports entre componentes passam pelo índice.
+- Interfaces de props ficam no próprio componente. Só tipos compartilhados vão para `src/types`.
+- Valores repetidos de cor, fonte, espaçamento, raio e sombra vão para `src/styles`.
+- Classes no padrão BEM (`bloco__elemento--modificador`).
+- Mensagens de commit no formato `tipo(Escopo): descrição`, por exemplo `feat(Footer): adição do componente Footer`.
+- Antes de abrir o commit, rode `npm run lint` e `npm run build`.
