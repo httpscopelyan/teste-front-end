@@ -10,6 +10,7 @@ import "./ProductCarousel.scss"
 
 interface ProductCarouselProps {
     products: Product[];
+    onBuy: (product: Product) => void;
 }
 
 const desktop = window.matchMedia("(min-width: 960px)")
@@ -31,7 +32,7 @@ const setDirection = (direction: "next" | "prev") => ({ el }: SwiperClass) => {
     el.dataset.direction = direction
 }
 
-export function ProductCarousel({ products }: ProductCarouselProps) {
+export function ProductCarousel({ products, onBuy }: ProductCarouselProps) {
     const [previousButton, setPreviousButton] = useState<HTMLButtonElement | null>(null)
     const [nextButton, setNextButton] = useState<HTMLButtonElement | null>(null)
     const cardsPerPage = useSyncExternalStore(subscribe, getCardsPerPage)
@@ -62,7 +63,7 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
                                     className="product-showcase__card"
                                     style={{ "--card-index": index } as CSSProperties}
                                 >
-                                    <ProductCard {...product} />
+                                    <ProductCard {...product} onBuy={() => onBuy(product)} />
                                 </li>
                             ))}
                         </ul>

@@ -1,5 +1,5 @@
-import { useId } from "react"
-import { ProductCarousel, SectionTitle, ShowcaseTags, type Product } from ".."
+import { useId, useState } from "react"
+import { ProductCarousel, ProductModal, SectionTitle, ShowcaseTags, type Product } from ".."
 import "./ProductShowcase.scss"
 
 interface ProductShowcaseProps {
@@ -18,6 +18,7 @@ export function ProductShowcase({
     seeAllHref = "#",
 }: ProductShowcaseProps) {
     const titleId = useId()
+    const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
     return (
         <section className="product-showcase" aria-labelledby={titleId}>
@@ -33,7 +34,10 @@ export function ProductShowcase({
                     <a className="product-showcase__link" href={seeAllHref}>{seeAllLabel}</a>
                 )}
             </div>
-            <ProductCarousel products={products} />
+            <ProductCarousel products={products} onBuy={setSelectedProduct} />
+            {selectedProduct && (
+                <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
+            )}
         </section>
     )
 }
