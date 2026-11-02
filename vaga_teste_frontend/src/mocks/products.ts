@@ -1,20 +1,16 @@
-import type { Product } from "../components/ProductCard/ProductCard"
+import type { Product } from "../types/product"
 
-const placeholderImage = `data:image/svg+xml;utf8,${encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="278" height="228"><rect width="100%" height="100%" fill="#F4F4F4"/></svg>'
-)}`
-
-const name = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+const photo = "https://app.econverse.com.br/teste-front-end/junior/tecnologia/fotos-produtos/foto-iphone.png"
 
 export const products: Product[] = [
-    { id: 1, image: placeholderImage, name, price: 28.9, oldPrice: 30.9, installments: { count: 2, value: 49.95 }, freeShipping: true },
-    { id: 2, image: placeholderImage, name, price: 59.9, oldPrice: 69.9, installments: { count: 3, value: 19.97 }, freeShipping: true },
-    { id: 3, image: placeholderImage, name, price: 129.9, installments: { count: 5, value: 25.98 } },
-    { id: 4, image: placeholderImage, name, price: 89.9, oldPrice: 99.9, freeShipping: true },
-    { id: 5, image: placeholderImage, name, price: 249.9, oldPrice: 299.9, installments: { count: 10, value: 24.99 }, freeShipping: true },
-    { id: 6, image: placeholderImage, name, price: 19.9 },
-    { id: 7, image: placeholderImage, name, price: 349.9, oldPrice: 399.9, installments: { count: 6, value: 58.32 } },
-    { id: 8, image: placeholderImage, name, price: 74.9, oldPrice: 84.9, installments: { count: 2, value: 37.45 }, freeShipping: true },
+    { productName: "Iphone 11 PRO MAX BRANCO 1", descriptionShort: "Iphone 11 PRO MAX BRANCO 1", photo, price: 15000 },
+    { productName: "IPHONE 13 MINI 1", descriptionShort: "IPHONE 13 MINI 1", photo, price: 9000 },
+    { productName: "Iphone 11 PRO MAX BRANCO 2", descriptionShort: "Iphone 11 PRO MAX BRANCO 2", photo, price: 14990 },
+    { productName: "IPHONE 13 MINI 2", descriptionShort: "IPHONE 13 MINI 2", photo, price: 12000 },
+    { productName: "Iphone 11 PRO MAX BRANCO 3", descriptionShort: "Iphone 11 PRO MAX BRANCO 3", photo, price: 4550 },
+    { productName: "IPHONE 13 MINI 3", descriptionShort: "IPHONE 13 MINI 3", photo, price: 38000 },
+    { productName: "Iphone 11 PRO MAX BRANCO 4", descriptionShort: "Iphone 11 PRO MAX BRANCO 4", photo, price: 42000 },
+    { productName: "IPHONE 13 MINI 4", descriptionShort: "IPHONE 13 MINI 4", photo, price: 520 },
 ]
 
 export const productTags = ["CELULAR", "ACESSÓRIOS", "TABLETS", "NOTEBOOKS", "TVS"]

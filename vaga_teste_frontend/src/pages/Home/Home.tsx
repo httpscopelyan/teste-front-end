@@ -1,7 +1,15 @@
-import { BannerSupport, BrandButton, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase } from "../../components"
-import { products, productTags } from "../../mocks/products"
+import { useEffect, useState } from "react"
+import { BannerSupport, BrandButton, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase, type Product } from "../../components"
+import { productTags } from "../../mocks/products"
+import { getProducts } from "../../service/products"
 
 export function Home() {
+    const [products, setProducts] = useState<Product[]>([])
+
+    useEffect(() => {
+        getProducts().then(setProducts)
+    }, [])
+
     return (
         <main>
             <Header />
@@ -12,9 +20,9 @@ export function Home() {
             <ProductShowcase products={products} />
             <BannerSupport />
             <BrandButton />
-            <ProductShowcase products={products}/>
-            <Newsletter/>
-            <Footer/>
+            <ProductShowcase products={products} />
+            <Newsletter />
+            <Footer />
         </main>
     )
 }
