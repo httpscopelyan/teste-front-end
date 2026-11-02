@@ -11,10 +11,10 @@
 }
 
 .product-showcase__tags-item {
-  flex: 2 4 110px;
+  flex: 1 1 0;
 
   & + & {
-    gap: -1px;
+    margin-left: -1px;
   }
 }
 
