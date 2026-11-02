@@ -1,0 +1,36 @@
+@use "../../styles/variables" as *;
+
+.section-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 34px;
+  width: 100%;
+  max-width: 1138px;
+
+  &__line {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 360px;
+    height: 1px;
+    margin-top: 18px;
+    background-color: $color-border-section;
+  }
+
+  &__text {
+    flex: none;
+    color: $color-text-title;
+    font-family: $font-main;
+    font-size: $font-size-30;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-150;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .section-title {
+    &__line {
+      display: none;
+    }
+  }
+}

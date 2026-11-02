@@ -1,7 +1,5 @@
 import { useId, useState } from "react"
-import type { Product } from "../ProductCard/ProductCard"
-import { ProductCarousel } from "./ProductCarousel/ProductCarousel"
-import { ShowcaseTags } from "./ShowcaseTags/ShowcaseTags"
+import { ProductCarousel, SectionTitle, ShowcaseTags, type Product } from ".."
 import "./ProductShowcase.scss"
 
 interface ProductShowcaseProps {
@@ -32,11 +30,7 @@ export function ProductShowcase({
     return (
         <section className="product-showcase" aria-labelledby={titleId}>
             <div className="product-showcase__header">
-                <div className="product-showcase__title">
-                    <span className="product-showcase__title-line" aria-hidden="true" />
-                    <h2 className="product-showcase__title-text" id={titleId}>{title}</h2>
-                    <span className="product-showcase__title-line" aria-hidden="true" />
-                </div>
+                <SectionTitle id={titleId} title={title} />
                 {tags ? (
                     <ShowcaseTags
                         tags={tags}

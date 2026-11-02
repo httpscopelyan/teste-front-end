@@ -1,4 +1,8 @@
+@use "sass:math";
 @use "../../styles/variables" as *;
+
+$design-width: 1396px;
+$scale-step: 60px;
 
 .product-showcase {
   width: 100%;
@@ -10,32 +14,6 @@
     flex-direction: column;
     align-items: center;
     gap: 4px;
-  }
-
-  &__title {
-    display: flex;
-    align-items: flex-start;
-    gap: 34px;
-    width: 100%;
-    max-width: 1138px;
-  }
-
-  &__title-line {
-    flex: 1 1 0;
-    min-width: 0;
-    max-width: 360px;
-    height: 1px;
-    margin-top: 18px;
-    background-color: $color-border-section;
-  }
-
-  &__title-text {
-    flex: none;
-    color: $color-text-title;
-    font-family: $font-main;
-    font-size: $font-size-30;
-    font-weight: $font-weight-bold;
-    line-height: $line-height-150;
   }
 
   &__link {
@@ -50,20 +28,21 @@
   }
 }
 
-@media (max-width: #{$breakpoint-desktop - 1px}) {
-  .product-showcase__header {
-    padding: 0 $space-6;
+@for $step from 0 through 8 {
+  $max-width: $design-width - 1px - $step * $scale-step;
+
+  @if $max-width >= 960px {
+    @media (max-width: $max-width) {
+      .product-showcase__header,
+      .product-showcase__carousel {
+        zoom: math.div($max-width + 1px - $scale-step, $design-width);
+      }
+    }
   }
 }
 
-@media (max-width: #{$breakpoint-mobile}) {
-  .product-showcase {
-    &__title-line {
-      display: none;
-    }
-
-    &__title {
-      justify-content: center;
-    }
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .product-showcase__header {
+    padding: 0 $space-6;
   }
 }

@@ -1,4 +1,3 @@
-@use "sass:math";
 @use "../../../styles/variables" as *;
 
 $card-width: 304px;
@@ -8,8 +7,6 @@ $exit-duration: 200ms;
 $enter-duration: 500ms;
 $card-stagger: 55ms;
 $slide-distance: 72px;
-$design-width: 1396px;
-$scale-step: 60px;
 
 .product-showcase {
   &__carousel {
@@ -67,18 +64,6 @@ $scale-step: 60px;
       opacity $enter-duration cubic-bezier(0.22, 1, 0.36, 1) calc(#{$exit-duration * 0.6} + var(--delay)),
       transform $enter-duration cubic-bezier(0.22, 1, 0.36, 1) calc(#{$exit-duration * 0.6} + var(--delay)),
       visibility 0s linear calc(#{$exit-duration * 0.6} + var(--delay));
-  }
-}
-
-@for $step from 0 through 8 {
-  $max-width: $design-width - 1px - $step * $scale-step;
-
-  @if $max-width >= 960px {
-    @media (max-width: $max-width) {
-      .product-showcase__carousel {
-        zoom: math.div($max-width + 1px - $scale-step, $design-width);
-      }
-    }
   }
 }
 
