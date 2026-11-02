@@ -37,6 +37,8 @@ export function ProductCarousel({ products, onBuy }: ProductCarouselProps) {
     const [nextButton, setNextButton] = useState<HTMLButtonElement | null>(null)
     const cardsPerPage = useSyncExternalStore(subscribe, getCardsPerPage)
 
+    if (products.length === 0) return null
+
     return (
         <div
             className="product-showcase__carousel"

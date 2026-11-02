@@ -1,0 +1,13 @@
+@use "../../styles/variables" as *;
+
+.home__error {
+  width: 100%;
+  max-width: $container-width;
+  margin: $space-19 auto 0;
+  color: $color-text-subtitle;
+  font-family: $font-main;
+  font-size: $font-size-16;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-150;
+  text-align: center;
+}
