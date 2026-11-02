@@ -1,0 +1,61 @@
+@use "../../styles/variables" as *;
+
+.banner-card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 634px;
+  min-height: 350px;
+  border-radius: $radius-xl;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 261px;
+    opacity: 0.8;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 85%);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 114px 44px 40px;
+  }
+
+  &__title {
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-40;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-150;
+  }
+
+  &__description {
+    max-width: 200px;
+    margin: 8px 0 32px;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-16;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-150;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .banner-card__content {
+    padding-right: $space-9;
+    padding-left: $space-9;
+  }
+}

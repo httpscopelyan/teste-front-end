@@ -1,0 +1,23 @@
+import Buttons from "../Button/Buttons"
+import "./banner.scss"
+
+interface BannerCardProps {
+    title: string;
+    description: string;
+    image: string;
+    buttonLabel?: string;
+}
+
+export function BannerCard({ title, description, image, buttonLabel = "Confira" }: BannerCardProps) {
+    return (
+        <article className="banner-card">
+            <img className="banner-card__image" src={image} alt="" />
+            <div className="banner-card__overlay" />
+            <div className="banner-card__content">
+                <h3 className="banner-card__title">{title}</h3>
+                <p className="banner-card__description">{description}</p>
+                <Buttons variant="checkbutton">{buttonLabel}</Buttons>
+            </div>
+        </article>
+    )
+}
