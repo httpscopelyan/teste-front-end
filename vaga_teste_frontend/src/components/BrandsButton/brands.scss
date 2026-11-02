@@ -1,0 +1,41 @@
+@use "../../styles/variables" as *;
+
+.brands {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-12;
+  width: 100%;
+  max-width: 1250px;
+  margin: 90px auto 0;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $space-14;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 211px;
+    border-radius: $radius-pill;
+    background-color: $color-bg-page;
+    box-shadow: $shadow-2;
+  }
+
+  &__item img {
+    width: 117px;
+    height: auto;
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .brands {
+    padding: 0 $space-6;
+  }
+}
