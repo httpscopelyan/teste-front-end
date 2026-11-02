@@ -1,20 +1,20 @@
-import { CategoryList } from "../../components/CategoryCard/CategoryList/CategoryList";
-import { Header } from "../../components/Header/Header";
-import { HeroBanner } from "../../components/HeroBanner/HeroBanner";
-import { ProductShowcase } from "../../components/ProductShowcase/ProductShowcase";
-import { products, productTags } from "../../mocks/products";
+import { BannerSupport, BrandButton, CategoryList, Footer, Header, HeroBanner, Newsletter, ProductShowcase } from "../../components"
+import { products, productTags } from "../../mocks/products"
 
-
-const Home = () => {
-    return ( 
+export function Home() {
+    return (
         <main>
-            <Header/>
-            <HeroBanner/>
+            <Header />
+            <HeroBanner />
             <CategoryList />
-            <ProductShowcase products={products} tags={productTags}/>
-
+            <ProductShowcase products={products} tags={productTags} />
+            <BannerSupport />
+            <ProductShowcase products={products} />
+            <BannerSupport />
+            <BrandButton />
+            <ProductShowcase products={products}/>
+            <Newsletter/>
+            <Footer/>
         </main>
     )
 }
-
-export default Home
