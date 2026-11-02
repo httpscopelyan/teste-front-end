@@ -14,7 +14,7 @@ export function BannerCard({ title, description, image, buttonLabel = "Confira" 
             <img className="banner-card__image" src={image} alt="" />
             <div className="banner-card__overlay" />
             <div className="banner-card__content">
-                <h3 className="banner-card__title">{title}</h3>
+                <h2 className="banner-card__title">{title}</h2>
                 <p className="banner-card__description">{description}</p>
                 <Buttons variant="checkbutton">{buttonLabel}</Buttons>
             </div>

@@ -11,18 +11,20 @@ export function Home() {
     }, [])
 
     return (
-        <main>
+        <>
             <Header />
-            <HeroBanner />
-            <CategoryList />
-            <ProductShowcase products={products} tags={productTags} />
-            <BannerSupport />
-            <ProductShowcase products={products} />
-            <BannerSupport />
-            <BrandButton />
-            <ProductShowcase products={products} />
-            <Newsletter />
+            <main>
+                <HeroBanner />
+                <CategoryList />
+                <ProductShowcase products={products} tags={productTags} />
+                <BannerSupport />
+                <ProductShowcase products={products} />
+                <BannerSupport />
+                <BrandButton />
+                <ProductShowcase products={products} />
+                <Newsletter />
+            </main>
             <Footer />
-        </main>
+        </>
     )
 }

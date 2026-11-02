@@ -1,3 +1,4 @@
+import { useId } from "react"
 import { CategoryCard } from "../.."
 import techIcon from "../../../assets/icons/category_icons/tech.webp"
 import supermarketIcon from "../../../assets/icons/category_icons/supermercados 1.webp"
@@ -19,8 +20,11 @@ const categories = [
 ]
 
 export function CategoryList() {
+    const titleId = useId()
+
     return (
-        <section className="category-list" aria-labelledby="category-list-title">
+        <section className="category-list" aria-labelledby={titleId}>
+            <h2 className="category-list__title" id={titleId}>Compre por categoria</h2>
             <ul className="category-list__items">
                 {categories.map(({ icon, text, selected }) => (
                     <li key={text}>
