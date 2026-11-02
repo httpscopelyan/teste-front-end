@@ -1,0 +1,89 @@
+@use "sass:math";
+@use "../../../styles/variables" as *;
+
+$card-width: 304px;
+$card-gap: $space-7;
+$arrow-space: $space-15;
+$exit-duration: 200ms;
+$enter-duration: 500ms;
+$card-stagger: 55ms;
+$slide-distance: 72px;
+$design-width: 1396px;
+$scale-step: 60px;
+
+.product-showcase {
+  &__carousel {
+    position: relative;
+    width: fit-content;
+    margin: $space-9 auto 0;
+    padding-inline: $arrow-space;
+  }
+
+  &__track.swiper {
+    width: calc(var(--cards-per-page) * #{$card-width} + (var(--cards-per-page) - 1) * #{$card-gap});
+    overflow: visible;
+  }
+
+  &__track .swiper-slide {
+    opacity: 1 !important;
+  }
+
+  &__cards {
+    display: flex;
+    gap: $card-gap;
+    list-style: none;
+  }
+
+  &__card {
+    --card-order: var(--card-index);
+    --delay: calc(var(--card-order) * #{$card-stagger});
+    flex-shrink: 0;
+    width: $card-width;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity $exit-duration ease-in var(--delay),
+      transform $exit-duration ease-in var(--delay),
+      visibility 0s linear calc(#{$exit-duration} + var(--delay));
+  }
+
+  &__track[data-direction="prev"] &__card {
+    --card-order: calc(var(--cards-per-page) - 1 - var(--card-index));
+  }
+
+  .swiper-slide-prev &__card {
+    transform: translateX(-$slide-distance);
+  }
+
+  .swiper-slide-next &__card {
+    transform: translateX($slide-distance);
+  }
+
+  .swiper-slide-active &__card {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity $enter-duration cubic-bezier(0.22, 1, 0.36, 1) calc(#{$exit-duration * 0.6} + var(--delay)),
+      transform $enter-duration cubic-bezier(0.22, 1, 0.36, 1) calc(#{$exit-duration * 0.6} + var(--delay)),
+      visibility 0s linear calc(#{$exit-duration * 0.6} + var(--delay));
+  }
+}
+
+@for $step from 0 through 8 {
+  $max-width: $design-width - 1px - $step * $scale-step;
+
+  @if $max-width >= 960px {
+    @media (max-width: $max-width) {
+      .product-showcase__carousel {
+        zoom: math.div($max-width + 1px - $scale-step, $design-width);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-showcase__card {
+    transition: none !important;
+  }
+}

@@ -21,9 +21,6 @@ const categories = [
 export function CategoryList() {
     return (
         <section className="category-list" aria-labelledby="category-list-title">
-            {/* <h2 id="category-list-title" className="category-list__title">
-                Compre por categoria
-            </h2> */}
             <ul className="category-list__items">
                 {categories.map(({ icon, text, selected }) => (
                     <li key={text}>

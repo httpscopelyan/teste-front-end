@@ -1,0 +1,33 @@
+@use "../../../styles/variables" as *;
+
+.product-showcase__arrow {
+  position: absolute;
+  top: 246px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: $color-white;
+  box-shadow: $shadow-3;
+
+  &--previous {
+    left: 0;
+    padding-right: 3.13px;
+  }
+
+  &--next {
+    right: 0;
+    padding-left: 3.13px;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .product-showcase__arrow {
+    display: none;
+  }
+}

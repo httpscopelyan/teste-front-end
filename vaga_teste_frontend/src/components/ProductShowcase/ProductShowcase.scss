@@ -1,0 +1,69 @@
+@use "../../styles/variables" as *;
+
+.product-showcase {
+  width: 100%;
+  margin-top: 90px;
+  overflow-x: clip;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-start;
+    gap: 34px;
+    width: 100%;
+    max-width: 1138px;
+  }
+
+  &__title-line {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 360px;
+    height: 1px;
+    margin-top: 18px;
+    background-color: $color-border-section;
+  }
+
+  &__title-text {
+    flex: none;
+    color: $color-text-title;
+    font-family: $font-main;
+    font-size: $font-size-30;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-150;
+  }
+
+  &__link {
+    display: block;
+    height: 23px;
+    color: $color-text-subtitle;
+    font-family: $font-main;
+    font-size: $font-size-15;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-150;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .product-showcase__header {
+    padding: 0 $space-6;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .product-showcase {
+    &__title-line {
+      display: none;
+    }
+
+    &__title {
+      justify-content: center;
+    }
+  }
+}

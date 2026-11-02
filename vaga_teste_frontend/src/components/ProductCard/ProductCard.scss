@@ -1,0 +1,81 @@
+@use "../../styles/variables" as *;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 304px;
+  height: 500px;
+  padding: 32px 13.51px 16px 12.39px;
+  border-radius: $radius-lg;
+  background-color: $color-white;
+  box-shadow: $shadow-default;
+
+  &__image {
+    width: 278.1px;
+    height: 228px;
+    object-fit: cover;
+  }
+
+  &__details {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 275.9px;
+  }
+
+  &__name {
+    display: -webkit-box;
+    height: 46px;
+    margin: 9px 0 12px;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: $color-text-subtitle;
+    font-family: $font-main;
+    font-size: $font-size-15;
+    font-weight: $font-weight-light;
+    line-height: $line-height-150;
+  }
+
+  &__old-price {
+    display: block;
+    color: $color-text-discount;
+    font-family: $font-main;
+    font-size: $font-size-16;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-150;
+    text-decoration: line-through;
+  }
+
+  &__price {
+    margin-top: 2px;
+    color: $color-text-subtitle;
+    font-family: $font-main;
+    font-size: $font-size-20;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-150;
+  }
+
+  &__installments {
+    margin-top: 2px;
+    color: $color-text-subtitle;
+    font-family: $font-main;
+    font-size: $font-size-12;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-18;
+  }
+
+  &__shipping {
+    margin-top: 7px;
+    color: $color-text-title;
+    font-family: $font-main;
+    font-size: $font-size-12;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-18;
+  }
+
+  &__action {
+    margin-top: auto;
+  }
+}
