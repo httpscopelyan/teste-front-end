@@ -1,0 +1,32 @@
+@use "../../../styles/variables" as *;
+
+.category-list {
+  width: 100%;
+  max-width: 1160px;
+  margin: 39px auto;
+
+  &__title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: $space-14;
+    list-style: none;
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .category-list {
+    padding: 0 $space-6;
+  }
+}
