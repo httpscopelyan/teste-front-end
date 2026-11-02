@@ -12,12 +12,12 @@ interface NavbarProps {
 }
 
 const defaultLinks: NavbarLink[] = [
-    { label: "Todas Categorias" },
-    { label: "Supermercado" },
-    { label: "Livros" },
-    { label: "Moda" },
-    { label: "Lançamentos" },
-    { label: "Ofertas do dia", active: true },
+    { label: "TODAS CATEGORIAS" },
+    { label: "SUPERMERCADO" },
+    { label: "LIVROS" },
+    { label: "MODA" },
+    { label: "LANÇAMENTO" },
+    { label: "OFERTAS DO DIA", active: true },
 ]
 
 export function Navbar({ links = defaultLinks }: NavbarProps) {
