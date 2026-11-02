@@ -1,0 +1,99 @@
+@use "../../styles/variables" as *;
+
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 390px;
+
+  &__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 966px;
+    max-width: 100%;
+    opacity: 0.8;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000000 85%);
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 78px 0 55px;
+  }
+
+  &__title {
+    max-width: 822px;
+    text-align: start;
+    margin-left: 1px;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-48;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-50;
+  }
+
+  &__subtitle {
+    margin-top: 18px;
+    margin-left: -2px;
+    color: $color-white;
+    font-family: $font-main;
+    font-size: $font-size-32;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-150;
+
+    span { 
+      color: $color-brand-yellow;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__action {
+    margin-top: 41px;
+    margin-left: 7px;
+  }
+}
+
+@media (max-width: #{$breakpoint-desktop - 1px}) {
+  .hero-banner__content {
+    padding-right: $space-6;
+    padding-left: $space-6;
+  }
+}
+
+@media (max-width: #{$breakpoint-mobile}) {
+  .hero-banner {
+    &__overlay {
+      width: 100%;
+    }
+
+    &__content {
+      padding-top: $space-12;
+      padding-bottom: $space-12;
+    }
+
+    &__title {
+      font-size: $font-size-32;
+      line-height: $line-height-120;
+    }
+
+    &__subtitle {
+      font-size: $font-size-20;
+    }
+
+    &__action {
+      margin-top: $space-9;
+    }
+  }
+}
