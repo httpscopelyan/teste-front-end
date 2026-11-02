@@ -5,12 +5,11 @@ interface IconButtonProps {
     label: string;
     size?: number;
     type?: "button" | "submit";
-    onClick?: () => void;
 }
 
-export function IconButton({ icon, label, size = 32, type = "button", onClick }: IconButtonProps) {
+export function IconButton({ icon, label, size = 32, type = "button" }: IconButtonProps) {
     return (
-        <button className="header__icon-button" type={type} aria-label={label} onClick={onClick}>
+        <button className="header__icon-button" type={type} aria-label={label}>
             <img src={icon} alt="" width={size} height={size} />
         </button>
     )

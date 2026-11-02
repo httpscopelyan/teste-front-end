@@ -54,11 +54,11 @@ export function ProductCarousel({ products }: ProductCarouselProps) {
                 onSlidePrevTransitionStart={setDirection("prev")}
             >
                 {toPages(products, cardsPerPage).map((page) => (
-                    <SwiperSlide key={page[0].id}>
+                    <SwiperSlide key={page[0].productName}>
                         <ul className="product-showcase__cards">
-                            {page.map(({ id, ...product }, index) => (
+                            {page.map((product, index) => (
                                 <li
-                                    key={id}
+                                    key={product.productName}
                                     className="product-showcase__card"
                                     style={{ "--card-index": index } as CSSProperties}
                                 >

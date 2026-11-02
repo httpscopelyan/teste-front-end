@@ -2,18 +2,8 @@ import { useId } from "react"
 import { Buttons } from ".."
 import "./Newsletter.scss"
 
-interface NewsletterProps {
-    onSubscribe?: (name: string, email: string) => void;
-}
-
-export function Newsletter({ onSubscribe }: NewsletterProps) {
+export function Newsletter() {
     const titleId = useId()
-
-    const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        const data = new FormData(event.currentTarget)
-        onSubscribe?.(String(data.get("name") ?? ""), String(data.get("email") ?? ""))
-    }
 
     return (
         <section className="newsletter" aria-labelledby={titleId}>
@@ -24,7 +14,7 @@ export function Newsletter({ onSubscribe }: NewsletterProps) {
                         Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse.
                     </p>
                 </header>
-                <form className="newsletter__form" onSubmit={handleSubmit}>
+                <form className="newsletter__form">
                     <div className="newsletter__fields">
                         <input
                             className="newsletter__input"

@@ -4,18 +4,11 @@ import "./SearchBar.scss"
 
 interface SearchBarProps {
     placeholder?: string;
-    onSearch?: (query: string) => void;
 }
 
-export function SearchBar({ placeholder = "O que você está buscando?", onSearch }: SearchBarProps) {
-    const handleSubmit = (event: React.SyntheticEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        const query = new FormData(event.currentTarget).get("query")
-        onSearch?.(String(query ?? ""))
-    }
-
+export function SearchBar({ placeholder = "O que você está buscando?" }: SearchBarProps) {
     return (
-        <form className="header__search" role="search" onSubmit={handleSubmit}>
+        <form className="header__search" role="search">
             <input
                 className="header__search-input"
                 type="search"

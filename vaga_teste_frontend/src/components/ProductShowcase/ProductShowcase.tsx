@@ -1,4 +1,4 @@
-import { useId, useState } from "react"
+import { useId } from "react"
 import { ProductCarousel, SectionTitle, ShowcaseTags, type Product } from ".."
 import "./ProductShowcase.scss"
 
@@ -8,7 +8,6 @@ interface ProductShowcaseProps {
     tags?: string[];
     seeAllLabel?: string;
     seeAllHref?: string;
-    onTagChange?: (tag: string) => void;
 }
 
 export function ProductShowcase({
@@ -17,15 +16,8 @@ export function ProductShowcase({
     tags,
     seeAllLabel = "Ver todos",
     seeAllHref = "#",
-    onTagChange,
 }: ProductShowcaseProps) {
     const titleId = useId()
-    const [activeTag, setActiveTag] = useState(tags?.[0])
-
-    const handleTagSelect = (tag: string) => {
-        setActiveTag(tag)
-        onTagChange?.(tag)
-    }
 
     return (
         <section className="product-showcase" aria-labelledby={titleId}>
@@ -34,8 +26,6 @@ export function ProductShowcase({
                 {tags ? (
                     <ShowcaseTags
                         tags={tags}
-                        activeTag={activeTag}
-                        onSelect={handleTagSelect}
                         seeAllLabel={seeAllLabel}
                         seeAllHref={seeAllHref}
                     />
